@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Order::class, function (Faker $faker) {
     return [
-        'user_id' => \App\User::all()->random()->id,
+//        'user_id' => \App\User::all()->random()->id,
     ];
 });

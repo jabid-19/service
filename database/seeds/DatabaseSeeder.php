@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'user@mail.com',
         ]);
 
-        factory(Order::class, 15)->create();
+//        factory(Order::class, 15)->create();
         factory(Service::class, 50)->create();
 
     }

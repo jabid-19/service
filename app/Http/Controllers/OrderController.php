@@ -35,7 +35,11 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        Order::create($request->all());
+        $inputvalue = $request->all();
+
+        $arrayToString = implode(',', $request->input('service'));
+        $inputvalue['services'] = $arrayToString;
+        Order::create($inputvalue);
         return redirect('/home')->with('status','Created Successfully');
     }
 
