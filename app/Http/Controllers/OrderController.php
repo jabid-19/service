@@ -37,10 +37,12 @@ class OrderController extends Controller
     {
         $inputvalue = $request->all();
 
-        $arrayToString = implode(',', $request->input('service'));
+        $arrayToString = implode(', ', $request->input('service'));
         $inputvalue['services'] = $arrayToString;
+        $inputvalue['user_id'] = auth()->user()->id;
+
         Order::create($inputvalue);
-        return redirect('/home')->with('status','Created Successfully');
+        return redirect('/home')->with('status','Ordered Successfully');
     }
 
     /**
